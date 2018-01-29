@@ -1,0 +1,89 @@
+.navigation{
+	width:100%;
+	background:url(../images/nav-tail.gif) center top repeat-x #dfe1e5;
+	border-bottom:1px solid #b9babe;
+}
+	#page1 .navigation{margin-bottom:10px;}
+nav{position:relative; z-index:9999;}
+#menu-icon{display:none;}
+.menu {list-style:none;}
+.menu > li {
+	position:relative;
+	float:left;
+	font-weight:700;
+	font-size:16px;
+	line-height:20px;
+	text-transform:uppercase;
+	background:url(../images/menu-separator.gif) right top no-repeat;
+}
+	.menu > li > a {
+		display:block;
+		padding:12px 20px 14px;
+		color:#091647;
+		background:url(../images/menu-tail.gif) center -999em no-repeat;
+		position:relative;
+		margin-bottom:-1px;
+	}
+		.menu > li.sfHover > a,.menu > li > a:hover , .menu > li.current > a {text-decoration:none; color:#fff; background-position:center top; background-repeat:repeat-x; background-color:#ebb203;}
+	.menu .menu-arrow{display:none;}
+/***submenu***/
+.menu ul {
+	position:absolute;
+	top:-999em;
+	width:166px; 
+	display:none;
+	z-index:999;
+}
+.menu li li{
+	width:100%;
+	padding:0;
+	position:relative;
+	font:10px/12px Arial, Helvetica, sans-serif;
+}
+	.menu li li a{
+		display:block;
+		background:url(../images/submenu-tail.gif) center top repeat-x #0d275f;
+		color:#fff;
+		padding:6px 7px 8px;
+	}
+		.menu li li > a:hover,.menu li li.sfHover > a{color:#fbe602; text-decoration:none;}
+.menu li:hover ul, .menu li.sfHover ul {left:-1px; top:46px;}
+.menu li:hover li ul, .menu li.sfHover li ul {top:-999em;}
+/***subsubmenu***/
+.menu li li:hover ul, .menu li li.sfHover ul {left:167px; top:0;}
+.menu li li:hover li ul, .menu li li.sfHover li ul {top:-999em;}
+
+@media only screen and (max-width: 995px){
+	.menu > li > a {padding:12px 15px 14px;}
+	.menu > li > a .menu-arrow{display:inline-block; width:7px; height:4px; overflow:hidden; font-size:0; line-height:0; text-indent:-999em; background:url(../images/menu-arrow.gif) center top no-repeat; margin-left:6px; vertical-align:middle;}
+		.menu > li.sfHover > a .menu-arrow, .menu > li > a:hover .menu-arrow, .menu > li.current > a .menu-arrow{background-position:center -9px;}
+	.menu ul .menu-arrow{display:inline-block; line-height:10px; margin-left:3px; font-weight:normal;}
+}
+
+@media only screen and (max-width: 767px) {
+	.navigation{border-bottom:0;}
+		#page1 .navigation{margin-bottom:30px;}
+	#menu-icon{float:right; display:block; font: bold 16px/20px Arial, Helvetica, sans-serif; color:#fff; text-transform:uppercase; padding:12px 19px 14px; background:url(../images/menu-tail.gif) center top repeat-x #ebb203; position:relative; z-index:999; cursor:pointer; margin-top:-50px;}
+	/***menu***/
+	.menu{display:none; position:absolute; top:-4px; right:0; width:166px; z-index:999;}
+	.menu > li {float:none; width:100%; font-size:10px; line-height:12px; background:none;}
+	.menu > li > a {padding:6px 7px 8px; color:#fff; background:url(../images/submenu-tail.gif) center top repeat-x #0d275f; margin-bottom:0;}
+		.menu > li.sfHover > a,.menu > li > a:hover, .menu > li.current > a {color:#fbe602; background-color:#0d275f;}
+	.menu > li > a .menu-arrow{width:auto; height:auto; font-weight:700; font-size:10px; line-height:12px; text-indent:0; background:none; margin-left:2px; vertical-align:top;}
+	/***submenu***/
+	.menu ul {top:0 !important; right:167px !important; left:auto;}
+	.menu li:hover ul, .menu li.sfHover ul {left:auto; top:0px;}
+	/***subsubmenu***/
+	.menu ul ul {position:static; display:block !important;}
+		.menu ul ul li{text-transform:capitalize;}
+			.menu ul ul li a{padding-left:20px;}
+}
+
+@media only screen and (max-width: 479px){
+	.menu{width:133px;}
+	.menu ul {right:134px !important;}
+}
+
+@media only screen and (min-width: 768px) {
+	.menu {display:block !important;}
+}
